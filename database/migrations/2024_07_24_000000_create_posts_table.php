@@ -13,15 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 255);
-            $table->string('email')->unique();
-            $table->string('password', 255);
-            $table->string('bio', 400)->nullable();
-            $table->string('image', 255)->default('dawn.png');
-            $table->rememberToken();
-            $table->timestamp('created_at')->default(DB::raw('current_timestamp'));
+            $table->unsignedBigInteger('user_id');
+            $table->string('post', 400);
+            $table->timestamp('created_at',)->default(DB::raw('current_timestamp'));
             $table->timestamp('updated_at')->default(DB::raw('current_timestamp'));
         });
     }

@@ -1,0 +1,71 @@
+@charset "UTF-8";
+
+html {
+  font-size: 16px;
+}
+
+header {
+  text-align: center;
+}
+
+p {
+  color: #FFFFFF;
+  margin: 10px auto;
+  max-width: 500px;
+  margin-bottom: 80px;
+  margin-top: 100px;
+  text-align: center;
+}
+
+
+body {
+  background: linear-gradient(#3E4865, #D05E45);
+  background-repeat: no-repeat;
+  font-size: 1rem;
+  font-family: "YuGothic", Yu Gothic, sans-serif;
+}
+
+form {
+  margin: auto;
+  max-width: 500px;
+  background: #3E4865;
+  border-radius: 0.3rem;
+  background-color: rgba(62, 72, 101, 0.8);
+}
+
+
+.ct-block {
+  margin-bottom: 32px;
+  margin: 0 auto;
+}
+
+.contact-text {
+  color: #FFFFFF;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.form-name,
+.form-mail,
+.form-password,
+.form-confirm-password {
+  border-radius: 0.3rem;
+  border: 1px solid #b1b1b1;
+  width: 70%;
+  height: 30px;
+  padding: 5px 10px;
+  background: #fff;
+  margin: 0 auto;
+}
+
+.send-button {
+  border-radius: 0.3rem;
+  display: block;
+  background-color: #5A659E;
+  font-size: 1.0rem;
+  padding: 5px 10px;
+  margin: auto;
+  color: #fff;
+  transition: 0.6s;
+  margin-top: 32px;
+}
