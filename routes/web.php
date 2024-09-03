@@ -26,3 +26,5 @@ Route::get('hello', [PostsController::class, 'hello']);
 Route::get('/top', [PostsController::class, 'index']);
 Route::post('/create', [PostsController::class, 'create']);
 Route::delete('/post/delete', [PostsController::class, 'delete']);
+Route::get('post/{id}/update-form', [PostsController::class, 'updateForm']);
+Route::put('post/update', [PostsController::class, 'update']);

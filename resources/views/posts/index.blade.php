@@ -33,6 +33,7 @@
         <th>投稿日時</th>
         <th></th>
         <th></th>
+        <th></th>
       </tr>
       @foreach($posts as $post)
       <tr>
@@ -42,6 +43,9 @@
       <td>{{$post->name}}</td>
       <td>{{$post->post}}</td>
       <td>{{$post->created_at}}</td>
+        <td>
+          <a class="btn btn-primary" href="/post/{{ $post->id }}/update-form">更新</a>
+        </td>
       <td>
         <form action="/post/delete" method="post" onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')">
           @method('DELETE')
