@@ -28,3 +28,5 @@ Route::post('/create', [PostsController::class, 'create']);
 Route::delete('/post/delete', [PostsController::class, 'delete']);
 Route::get('post/{id}/update-form', [PostsController::class, 'updateForm']);
 Route::put('post/update', [PostsController::class, 'update']);
+Route::get('/search', [PostsController::class, 'search']);
+Route::post('/search', [PostsController::class, 'search']);

@@ -19,7 +19,7 @@ class PostsController extends Controller
     {
                 $posts = DB::table('posts')
             ->join('users', 'users.id', '=', 'posts.user_id')
-            ->select('users.name', 'users.image', 'users.id','posts.post','posts.created_at')
+            ->select('users.name', 'users.image', 'users.id','posts.id','posts.post','posts.created_at')
             ->get();
         return view('posts.index', ['posts' => $posts]);
     }
@@ -64,7 +64,19 @@ public function updateForm($id){
             ->update(
                 ['post' => $up_post]
             );
-
-        return redirect('/top');
+    return redirect('/top');
     }
+
+ public function search(Request $request){
+    if($request->isMethod('post')){
+        $keyword = $request->keyword;
+        $users = DB::table('users')
+        ->where('name','like',"%".$keyword."%")
+        ->get();
+    }else{
+    $users = DB::table('users')
+    ->get();
+    }
+    return view('posts.search', ['users' => $users]);
+ }
 }

@@ -25,6 +25,7 @@
       <input class="send-button" type="submit" value="投稿する">
     </form>
     <h2 class='page-header'>投稿一覧</h2>
+
     <table class='table table-hover'>
       <tr>
         <th></th>
@@ -58,5 +59,6 @@
     @endforeach
   </table>
 </div>
+<a href="/search">ユーザー検索</a>
 </body>
 </html>
