@@ -79,4 +79,5 @@ public function updateForm($id){
     }
     return view('posts.search', ['users' => $users]);
  }
+
 }

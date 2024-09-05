@@ -24,6 +24,16 @@
       @foreach($users as $user)
       <div>
       {{$user->name}}
+      <form action="/follow/create" method="post">
+      @csrf
+        <input type="hidden" name="id" value="{{$user->id}}">
+        <input type="submit" value="フォローする">
+      </form>
+      <form action="/follow/delete" method="post">
+      @csrf
+        <input type="hidden" name="id" value="{{$user->id}}">
+        <input type="submit" value="フォロー外す">
+      </form>
       </div>
       @endforeach
       </div>

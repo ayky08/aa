@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostsController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,3 +31,5 @@ Route::get('post/{id}/update-form', [PostsController::class, 'updateForm']);
 Route::put('post/update', [PostsController::class, 'update']);
 Route::get('/search', [PostsController::class, 'search']);
 Route::post('/search', [PostsController::class, 'search']);
+Route::post('/follow/create', [UserController::class, 'follow']);
+Route::post('/follow/delete', [UserController::class, 'unfollow']);
