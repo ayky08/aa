@@ -15,14 +15,15 @@ class PostsController extends Controller
         echo 'コントローラーから';
     }
 
-        public function index()
+    public function index()
     {
-                $posts = DB::table('posts')
+        $posts = DB::table('posts')
             ->join('users', 'users.id', '=', 'posts.user_id')
             ->select('users.name', 'users.image', 'users.id','posts.id','posts.post','posts.created_at')
             ->get();
         return view('posts.index', ['posts' => $posts]);
     }
+
     public function create(Request $request)
     {
         $post = $request->input('newPost');
@@ -68,6 +69,9 @@ public function updateForm($id){
     }
 
  public function search(Request $request){
+       $follows=DB::table('follows')
+       ->where('follower_id',Auth::id())
+       ->get();
     if($request->isMethod('post')){
         $keyword = $request->keyword;
         $users = DB::table('users')
@@ -77,7 +81,7 @@ public function updateForm($id){
     $users = DB::table('users')
     ->get();
     }
-    return view('posts.search', ['users' => $users]);
+    return view('posts.search', ['users' => $users,'follows' =>$follows]);
  }
 
 }

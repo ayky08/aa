@@ -51,6 +51,7 @@ class User extends Authenticatable
             'following_user_id'
         );
     }
+
     public function follow()
     {
         return $this->belongsToMany(

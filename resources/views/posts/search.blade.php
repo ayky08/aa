@@ -24,16 +24,20 @@
       @foreach($users as $user)
       <div>
       {{$user->name}}
+      @if(!($follows->contains('user_id', $user->id)))
       <form action="/follow/create" method="post">
       @csrf
+
         <input type="hidden" name="id" value="{{$user->id}}">
         <input type="submit" value="フォローする">
       </form>
+      @else
       <form action="/follow/delete" method="post">
       @csrf
         <input type="hidden" name="id" value="{{$user->id}}">
         <input type="submit" value="フォロー外す">
       </form>
+      @endif
       </div>
       @endforeach
       </div>
