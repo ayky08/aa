@@ -27,6 +27,7 @@ class ProfileController extends Controller
             ->join('users', 'users.id', '=', 'posts.user_id')
             ->select('users.name', 'users.image', 'users.id','posts.id','posts.post','posts.created_at')
             ->get();
+            //dd($post);
         return view('profiles.profile', ['myProfile' => $myProfile, 'posts' => $posts]);
     }
 }
